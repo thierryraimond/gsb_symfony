@@ -1,0 +1,15 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/etatFrais.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mes fiches de frais</h3>
+    </div>
+    <div class="panel-body">
+        {# Affiche le formulaire SelectionnerMois #}
+        {% include "GsbGestionFraisBundle:EtatFrais:formSelectionnerMois.html.twig" %}
+    </div>
+</div>
+{% endblock %}    

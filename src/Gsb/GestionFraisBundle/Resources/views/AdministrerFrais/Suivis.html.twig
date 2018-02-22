@@ -1,0 +1,23 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/Suivis.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+    
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Tableau de bord</h3>
+    </div>
+    <div class="panel-body">
+
+        {# Affiche le tableau de bord des fiches de frais #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:tableauDeBord.html.twig" %}
+        
+    </div>
+</div>
+        
+{# Affiche le tableau des fiches de frais en fonction de l'état#}
+{% include "GsbGestionFraisBundle:AdministrerFrais:tableSuivisFiche.html.twig" %}
+
+
+{% endblock %}    

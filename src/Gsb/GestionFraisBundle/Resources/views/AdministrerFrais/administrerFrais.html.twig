@@ -1,0 +1,47 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/administrerFrais.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+    
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Selection d'un employé et d'un mois</h3>
+    </div>
+    <div class="panel-body">
+        {# Affiche le formulaire formSelectionnerVisiteur #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formSelectionnerVisiteur.html.twig" %}
+        
+        {# Affiche le formulaire SelectionnerMois #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formSelectionnerMois.html.twig" %}
+        
+    </div>
+</div>
+        
+{% include "GsbGestionFraisBundle:AdministrerFrais:workFlow.html.twig" %}
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            Fiche de frais du mois {{ numMois }}-{{ numAnnee }}
+            pour l'employé {{ employe.prenom }} {{ employe.nom }} : 
+        </h2>
+    </div>
+    <div class="panel-body">
+    <div class="col-lg-12">
+            
+        {# include panelStatutFiche #}
+        {% include "GsbGestionFraisBundle:EtatFrais:panelStatutFiche.html.twig" %}
+        
+        {# include tableForfait #}
+        {% include "GsbGestionFraisBundle:EtatFrais:tableForfait.html.twig" %}
+        
+        {# include tableHorsForfait #}
+        {% include "GsbGestionFraisBundle:EtatFrais:tableHorsForfait.html.twig" %}
+                
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}    

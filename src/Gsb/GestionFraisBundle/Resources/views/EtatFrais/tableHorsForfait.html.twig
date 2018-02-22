@@ -1,0 +1,29 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/tableHorsForfait.html.twig #}
+
+<div class="panel panel-info table-responsive">
+    <table class="table table-striped table-condensed">
+        <div class="panel-heading">
+            Descriptif des éléments hors forfait 
+            <i>
+                - {{ nbJustificatifs }} justificatif(s) reçu(s) -
+            </i>
+        </div>
+        <thead>
+            <tr>
+                <th class="date">Date</th>
+                <th class="libelle">Libellé</th>
+                <th style="text-align:right" class="montant">Montant</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for unFraisHorsForfait in lesFraisHorsForfait %}
+            <tr>
+                <td>{{ unFraisHorsForfait.date }}</td>
+                <td>{{ unFraisHorsForfait.libelle }}</td>
+                <td style="text-align:right">{{ unFraisHorsForfait.montant }} €
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

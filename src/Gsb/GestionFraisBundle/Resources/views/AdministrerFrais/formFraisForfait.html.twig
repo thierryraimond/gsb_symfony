@@ -1,0 +1,97 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formFraisForfait.html.twig #}
+
+<div class="panel panel-primary table-responsive">
+    <div class="panel-heading">
+                <h3 class="panel-title">Eléments forfaitisés</h3>
+    </div>
+    <form class="form-horizontal" method="POST" 
+        action="{{ path('gsb_gestion_frais_administrer_saisirForfait') }}">
+        <div class="panel-body">
+            <div class="col-lg-12">
+            <fieldset>
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <tr>
+                        <th title="Les frais forfaitaires doivent être justifiés par
+                            une facture acquittée faisant apparaître le montant de la
+                            TVA. Ces documents ne sont pas à joindre à l’état de 
+                            frais mais doivent être conservés pendant trois années.
+                            Ils peuvent être contrôlés par le délégué régional ou le
+                            service comptable">
+                            <h4>Frais Forfaitaires</h4>
+                        </th>
+                        <th title="Tarifs en vigueur au 01/09/2010"
+                            id="forfaitmontant">
+                            <h4>Montant unitaire</h4>
+                        </th>
+                        <th><h4>Quantité</h4></th>
+                        <th style="text-align:right" class="montant">
+                            <h4>Total</h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% set total = 0 %}
+                {% for unFrais in lesFraisForfait %}
+                    <tr>
+                        <td>
+                            <label for="idFrais" class="form-control"
+                                   style='border: 0px;'>
+                                {{ unFrais.libelle }} 
+                            </label>
+                        </td>
+                        <td>
+                            <label for="forfaitmontant" class="form-control"
+                                id="forfaitmontant"
+                                style='border: 0px;'>
+                                <i>({{ unFrais.forfaitmontant }} €)</i>
+                            </label>
+                        </td>
+                        <td style="text-align:right">
+                            <input type="text"
+                                style="text-align:right;
+                                color: blue;"
+                                class="form-control"
+                                id="idFrais"
+                                name="lesFrais[{{ unFrais.idfrais }}]" 
+                                size="10"
+                                maxlength="5" 
+                                value="{{ unFrais.quantite }}" >
+                        </td>
+                        <td style="text-align:right;">
+                            <label class="form-control"
+                                style='border: 0px;'>
+                            {% set total = unFrais.forfaitmontant * unFrais.quantite 
+                            %}
+                                <b>{{ total }} €</b>
+                            </label>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            </fieldset>
+            <div style="text-align:right">
+                le montant total des frais forfaitisés s'élève à 
+                <b>{{ totalFraisForfait }} € </b>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" 
+                    id="ok"
+                    type="submit"
+                    value="Valider"
+                    name="valider">
+                    Valider
+                </button>
+                <button class="btn btn-danger"
+                    id="annuler"
+                    type="reset"
+                    value="Effacer"
+                    name="effacer">
+                    Effacer
+                </button>
+            </div>
+            </div>
+        </div>    
+    </form>
+</div>

@@ -1,0 +1,63 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/tableauDeBord.html.twig #}
+
+<ul class="nav navbar-nav">
+    <li>
+        <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+            {'libEtat': "Fiche créée, saisie en cours" }) }}"
+            style="color:#d67f2e">
+            Saisies en cours 
+            <span 
+                class="badge"	
+                style="background-color:#d67f2e; color:white;">
+                {{ session.nbFichesSaisieEnCours }}
+            </span> 
+        </a>
+    </li>
+    <li>
+                    <a href="#" style="color:#d62e2e">
+                        Saisies à clôturer 
+                        <span 
+                            class="badge" 
+                            style="background-color:#d62e2e; color:white;">
+                            {{ session.nbFichesACloturer }}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="
+                       {{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                       {'libEtat': "Saisie clôturée" }) }}"
+                       style="color:#397dd5">
+                        Clôturées 
+                        <span
+                            class="badge"
+                            style="background-color:#397dd5; color:white;">
+                            {{ session.nbFichesCloturees }}
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                       {'libEtat': "Validée et mise en paiement" }) }}"
+                       style="color:#008900">
+                        Validées 
+                        <span 
+                            class="badge"
+                            style="background-color:#008900; color:white;">
+                            {{ session.nbFichesValidees }}
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                        {'libEtat': "Remboursée" }) }}"
+                        style="color:#8539d5">
+                        Remboursées 
+                        <span 
+                            class="badge"
+                            style="background-color:#8539d5; color:white;">
+                            {{ session.nbFichesRemboursees }}
+                        </span> 
+                    </a>
+                </li>
+            </ul>

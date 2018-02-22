@@ -1,0 +1,1 @@
+t:\composer\vendor\bin\phpdoc -d t:\wamp\www\gsb_symfony\src\Gsb\GestionFraisBundle\Controller -t t:\wamp\www\gsb_symfony\phpDoc --template="responsive-twig"

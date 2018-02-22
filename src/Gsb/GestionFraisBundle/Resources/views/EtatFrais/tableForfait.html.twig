@@ -1,0 +1,25 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/tableForfait.html.twig #}
+
+<div class="panel panel-primary table-responsive">
+    <table class="table table-striped table-condensed">
+        <div class="panel-heading">
+            Eléments forfaitisés
+        </div>
+        <thead>
+            <tr>
+            {% set libelle = '' %}
+            {% for unFraisForfait in lesFraisForfait %}
+                {% set libelle = unFraisForfait.libelle %}
+                <th style="text-align:center">{{ libelle }}</th>
+            {% endfor %}
+            </tr>
+            <tr>
+            {% set quantite = '' %}
+            {% for unFraisForfait in lesFraisForfait %}
+                {% set quantite = unFraisForfait.quantite %}
+                <td style="text-align:center" class="qteForfait">{{ quantite }}</td>
+            {% endfor %}
+            </tr>
+		</thead>
+	</table>
+</div>

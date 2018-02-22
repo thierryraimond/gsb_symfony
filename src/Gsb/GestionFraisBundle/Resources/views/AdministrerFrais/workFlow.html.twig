@@ -1,0 +1,172 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/administrerFrais/workFlow.html.twig #}
+
+{# initialisation des variables du workflow #}
+{% set warning, primary, success, remboursee = 0, 0, 0, 0 %}
+{% set vWarning, vPrimary, vSuccess, vRemboursee = 0, 0, 0, 0 %}
+{% set warningClass, rembourseeClass, primaryClass, successClass = 'btn-warning',
+ 'btn-default disabled', 'btn-default disabled', 'btn-default disabled' %}
+{% set warningStyle, primaryStyle, successStyle, rembourseeStyle = '', '', '', '' %}
+{% set warningHidden, primaryHidden, successHidden, rembourseeHidden = 'hidden', 
+ 'hidden', 'hidden', 'hidden' %}
+
+{% if libEtat == "Fiche créée, saisie en cours" %}
+    {% set vWarning = 25 %}
+{% elseif libEtat == "Saisie clôturée" %} 
+    {% set warningClass, primary, primaryClass, warningHidden = 
+     'btn-primary disabled', 33, 'btn-primary', '' %}
+    {% set vPrimary = 50 %}
+{% elseif libEtat == "Validée et mise en paiement" %} 
+    {% set warningClass, primaryClass, successClass, success = 
+    'btn-success disabled', 'btn-success disabled', 'btn-success', 66 %}
+    {% set warningHidden, primaryHidden = '', '' %}
+    {% set vSuccess = 75 %}
+{% elseif libEtat == "Remboursée" %} 
+    {% set remboursee = 99 %}
+    {% set warningClass, rembourseeClass, primaryClass, successClass = 'disabled', 
+    '', 'disabled', 'disabled' %}
+    {% set warningStyle, primaryStyle, successStyle, rembourseeStyle = 
+    'background-color:#8539d5; color:white;',
+    'background-color:#8539d5; color:white;',
+    'background-color:#8539d5; color:white;',
+    'background-color:#8539d5; color:white;' %}
+    {% set warningHidden, primaryHidden, successHidden, rembourseeHidden = '',
+     '', '', '' %}
+    {% set vRemboursee = 100 %}
+{% endif %}
+
+<div class="panel panel-danger table-responsive">
+    <div class="panel-heading">
+        <h3 class="panel-title">Suivis des frais</h3>
+    </div>
+    <div class="panel-body" id="workflow-desktop">
+        <div class="col-lg-12">
+            <div class="row">
+                <a class="btn {{ warningClass }}" title="Saisie en cours" 
+                    style="z-index: 2;
+                    position: absolute;
+                    top: -20%;
+                    opacity: 1;
+                    {{ warningStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_cloturerFiche') }}"
+                    onclick="return confirm
+                        ('Voulez-vous vraiment clôturer cette fiche de frais?');">
+                    Saisie en cours </br>
+                    <span class="glyphicon glyphicon-ok {{ warningHidden }}"></span>
+                </a>
+                <a class="btn {{ primaryClass }}" title="Saisie clôturée"
+                    style="position: absolute;
+                    top: -20%;
+                    left: 33%;
+                    opacity: 1;
+                    {{ primaryStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_modifier') }}">
+                    Saisie clôturée </br>
+                    <span class="glyphicon glyphicon-ok {{ primaryHidden }}"></span>
+                </a>
+                <a class="btn {{ successClass }}" title="Validée" 
+                    style="z-index: 2;
+                    position: absolute;
+                    top: -20%;
+                    left: 62%;
+                    opacity: 1;
+                    {{ successStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_rembourserFiche') }}"
+                    onclick="return confirm
+                        ('Voulez-vous vraiment mettre en paiement cette fiche de frais?');">
+                    Validée </br>
+                    <span class="glyphicon glyphicon-ok {{ successHidden }}"></span>
+                </a>
+                <a class="btn {{ rembourseeClass }}" href="#" title="Remboursée"
+                    style="position: absolute;
+                    top: -20%;
+                    left: 90.099%;
+                    opacity: 1;
+                    {{ rembourseeStyle }}">
+                    Remboursée </br>
+                    <span class="glyphicon glyphicon-ok {{ rembourseeHidden }}"></span>
+                </a>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning" 
+                        style="width: {{ warning }}%;">
+                    </div>
+                    <div class="progress-bar progress-bar-primary" 
+                        style="width: {{ primary }}%;">
+                    </div>
+                    <div class="progress-bar progress-bar-success" 
+                        style="width: {{ success }}%;">
+                    </div>
+                    <div class="progress-bar disabled" 
+                        style="width: {{ remboursee }}%;
+                        background-color:#8539d5;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# workflow partie pour device mobile et tablette #}
+    <div class="panel-body" id="workflow-mobile">
+        <div class="row">
+        <div class="col-xs-2">
+            <div class="progress"
+                    style="width: 138px; position: absolute; top:58px; left: -40px;
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);">
+                    <div class="progress-bar progress-bar-warning" 
+                        style="width: {{ vWarning }}%;">
+                    </div>
+                    <div class="progress-bar progress-bar-primary" 
+                        style="width: {{ vPrimary }}%;">
+                    </div>
+                    <div class="progress-bar progress-bar-success" 
+                        style="width: {{ vSuccess }}%;">
+                    </div>
+                    <div class="progress-bar disabled" 
+                        style="width: {{ vRemboursee }}%;
+                        background-color:#8539d5;">
+                    </div>
+            </div>
+        </div>
+        <div class="col-xs-10">
+            <div>
+                <a class="btn {{ warningClass }}" title="Saisie en cours" 
+                    style="opacity: 1; width:100%; text-align:left;
+                    {{ warningStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_cloturerFiche') }}"
+                    onclick="return confirm
+                        ('Voulez-vous vraiment clôturer cette fiche de frais?');">
+                    <span class="glyphicon glyphicon-ok {{ warningHidden }}"></span>
+                    Saisie en cours
+                </a>
+            </div>
+            <div>
+                <a class="btn {{ primaryClass }}" title="Saisie clôturée"
+                    style="opacity: 1; width:100%; text-align:left;
+                    {{ primaryStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_modifier') }}">
+                    <span class="glyphicon glyphicon-ok {{ primaryHidden }}"></span>
+                    Saisie clôturée
+                </a>
+            </div>
+            <div>
+                <a class="btn {{ successClass }}" title="Validée" 
+                    style="opacity: 1; width:100%; text-align:left;
+                    {{ successStyle }}"
+                    href="{{ path('gsb_gestion_frais_administrer_rembourserFiche') }}"
+                    onclick="return confirm
+                        ('Voulez-vous vraiment mettre en paiement cette fiche de frais?');">
+                    <span class="glyphicon glyphicon-ok {{ successHidden }}"></span>
+                    Validée
+                </a>
+            </div>
+            <div>
+                <a class="btn {{ rembourseeClass }}" href="#" title="Remboursée"
+                    style="opacity: 1; width:100%; text-align:left;
+                    {{ rembourseeStyle }}">
+                    <span class="glyphicon glyphicon-ok {{ rembourseeHidden }}"></span>
+                    Remboursée
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

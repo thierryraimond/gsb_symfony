@@ -1,0 +1,19 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/administrerFrais.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+    
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Selection d'un employé et d'un mois</h3>
+    </div>
+    <div class="panel-body">
+        {# Affiche le formulaire formSelectionnerVisiteur #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formSelectionnerVisiteur.html.twig" %}
+    </div>
+</div>
+
+
+
+{% endblock %}    

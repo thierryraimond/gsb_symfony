@@ -1,0 +1,24 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/Default/erreur.html.twig #}
+
+{% if erreurs != 0 %}
+<div class ="erreur">
+	<div class="controls">
+	    <div class="alert alert-block alert-danger">
+            <ul>
+                {% for erreur in erreurs %}
+                <li>{{ erreur }}</li>
+                {% endfor %}
+            </ul>
+	    </div>
+	</div>
+</div>
+{% endif %}
+
+{% if app.session.get('alerte') %}
+<div class ="alert alert-info" style="display: none">
+	<div class="controls">
+		<button type="button" class="close">×</button>
+		{{ app.session.get('alerte') }}
+	</div>
+</div>
+{% endif %}

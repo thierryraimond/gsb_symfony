@@ -1,0 +1,218 @@
+body { 
+	/*background-color:#77AADD;*/
+	padding-top: 70px;
+    background-image: url('../images/ciel_nuage_flou.jpg');
+	background-size: cover; /* version standardisée */
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+	background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* background image extensible automatiquement par code js
+img.superbg {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+*/
+.navbar-brand
+{
+  background: url('../images/logo_transp_57x35.png') center / contain no-repeat;
+  margin-left: 5px;
+  width: 50px;
+}
+#ul_hidden,#form_hidden
+{
+	display: none;
+}
+/*
+#navbarMain,#dropdownmenu,#dropmenu,#saisie,#fiche,#deco
+{
+    background-color: transparent;
+    color: black;
+}
+#icon-bar1
+{
+    background-color: #fff;
+}
+
+#dropdownmenu:hover,#dropdownmenu:active,#dropdownmenu:focus,
+#saisie:hover,
+#fiche:hover,
+#deco:hover
+{
+    background-color: transparent;
+    color: #fff;
+}
+*/
+
+/*
+header{
+	margin-bottom: 20px;
+}
+*/
+/*
+#titre,#logoGSB,#divimg {
+	display: table-cell;
+    vertical-align : middle;
+    text-align:center;
+    justify-content: center;
+}
+*/
+[class*="col"] { 
+	/*margin-bottom: 20px;*/
+}
+
+.form-inline {
+	margin-top: 20px;
+}
+
+.well {
+	background-color:#CCC;
+	padding: 20px;
+}
+
+/* Images responsive  
+.img-responsive {
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}*/
+#workflow-mobile {
+    display: none;
+}
+/* Container responsive */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* responsive text queries */ 
+@media (max-width: 768px) {
+    #workflow-desktop {
+        display: none;
+    }
+    #workflow-mobile {
+    display: block;
+  }
+  .container {
+    width: 100%;
+    height: auto;
+  }
+  p,.btn,input,div,span {
+    font-size: 100%;
+  }
+  #divimg {
+    /*margin-top: 20px;*/
+  }
+  /*#forfaitmontant,#lbDateHF,#lbMontantHF,#lbLibelleHF {
+    display: none;
+  }*/
+  .navbar-brand {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 22px;  
+  }
+  h2 {
+    font-size: 20px;  
+  }
+  h3,.panel-title {
+    font-size: 16px;  
+  }
+  
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  p,.btn,input,div,span {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 22px;  
+  }
+  h2 {
+    font-size: 20px;  
+  }
+  h3 {
+    font-size: 18px;  
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  p,.btn,input,div,span {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 24px;  
+  }
+  h2 {
+    font-size: 22px;  
+  }
+  h3 {
+    font-size: 20px;  
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  p,.btn,input,div,span {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 250%;  
+  }
+  h2 {
+    font-size: 200%;  
+  }
+  h3 {
+    font-size: 150%;  
+  }
+}
+
+/* responsive text queries 
+@media screen and (max-width: 992px) {
+  p,.btn,input,div,span,h4 {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 24px;  
+  }
+  h2 {
+    font-size: 22px;  
+  }
+  h3 {
+    font-size: 18px;  
+  }
+}
+
+@media screen and (max-width: 768px) {
+  p,.btn,input,div,span,h4 {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 22px;  
+  }
+  h2 {
+    font-size: 20px;  
+  }
+  h3 {
+    font-size: 18px;  
+  }
+} */
+
+/*
+#menuGauche {
+    background-image: url("../images/ciel_nuage.jpg");
+    background-repeat:no-repeat;
+}
+*/

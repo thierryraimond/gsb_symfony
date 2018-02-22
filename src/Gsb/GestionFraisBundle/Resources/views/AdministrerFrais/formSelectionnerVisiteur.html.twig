@@ -1,0 +1,39 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formSelectionnerVisiteur.html.twig #}
+
+<form action="{{ path('gsb_gestion_frais_administrer') }}" method="post">
+    <div class="corpsForm">
+        <label for="lstVisiteur" accesskey="n">
+            Visiteur : 
+        </label>
+<!-- valide automatiquement le changement de selection via javascript -->
+        <select id="lstVisiteur" name="lstVisiteur"
+            onchange='this.form.submit()'>
+            
+{% set compteur = session.idEmploye %}           
+{% if session.idEmploye == "null" %}
+    {% for unVisiteur in lesVisiteurs %}
+        {% if compteur == "null" %}
+            <option selected value="{{ unVisiteur.id }}">
+                {{ unVisiteur.prenom }} {{ unVisiteur.nom }} 
+            </option>
+            {% set compteur = "OK" %}
+        {% else %}
+            <option value="{{ unVisiteur.id }}">
+                {{ unVisiteur.prenom }} {{ unVisiteur.nom }}
+            </option>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <option selected value="{{ session.idEmploye }}">
+        {{ employe.prenom }} {{ employe.nom }} 
+    </option>
+   {% for unVisiteur in lesVisiteurs %}
+    <option value="{{ unVisiteur.id }}">
+        {{ unVisiteur.prenom }} {{ unVisiteur.nom }}
+    </option>
+   {% endfor %}
+{% endif %}
+
+        </select>
+    </div>
+</form>

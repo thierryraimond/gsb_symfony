@@ -1,0 +1,188 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/sommaire.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block navbar_menu %}
+    
+<!-- Division pour le sommaire via navbar -->
+<nav class="navbar navbar-default navbar-fixed-top" id="navbarMain">
+    <div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" 
+                data-toggle="collapse" 
+                data-target="#navbar" 
+                aria-expanded="false" 
+                aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand disabled" href="#">
+            </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+        {# Si l'utilisateur est un Visiteur affiche le menu "Suivi du remboursement 
+         des frais" sinon le cache #}
+    {% if session.metier == "Visiteur" %}
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#">
+                        Suivi du remboursement des frais
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ path('gsb_gestion_frais_gerer') }}" 
+                                title="Saisie fiche de frais ">
+                                <span class="glyphicon glyphicon-edit">
+                                </span>
+                                Saisie fiche de frais
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('gsb_gestion_frais_consulter') }}" 
+                                title="Consultation de mes fiches de frais">
+                                <span class="glyphicon glyphicon-folder-open">
+                                </span>
+                                Mes fiches de frais
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+    {% endif %}
+
+    {# Si l'utilisateur connecté est un comptable affiche le menu "Administration des 
+     frais" sur la navbar sinon le cache #}
+    {% if session.metier == "Comptable" %}
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        href="#">
+                        Administration des frais
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ path('gsb_gestion_frais_administrer') }}" 
+                                title="Consultation des fiches de frais ">
+                                <span class="glyphicon glyphicon-edit">
+                                </span>
+                                Validation des fiches de frais
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ 
+                                path('gsb_gestion_frais_administrer_suivreFiche') }}" 
+                                title="Consultation de mes fiches de frais">
+                                <span class="glyphicon glyphicon-folder-open">
+                                </span>
+                                Suivis des fiches de frais
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                        {'libEtat': "Fiche créée, saisie en cours" }) }}"
+                        style="color:#d67f2e">
+                        Saisies en cours 
+                        <span 
+                            class="badge"	
+                            style="background-color:#d67f2e; color:white;">
+                            {{ session.nbFichesSaisieEnCours }}
+                        </span> 
+                    </a>
+                </li>
+                {#<li>
+                    <a href="#" style="color:#d62e2e">
+                        Saisies à clôturer 
+                        <span 
+                            class="badge" 
+                            style="background-color:#d62e2e; color:white;">
+                            {{ session.nbFichesACloturer }}
+                        </span>
+                    </a>
+                </li>#}
+                <li>
+                    <a href="
+                       {{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                       {'libEtat': "Saisie clôturée" }) }}"
+                       style="color:#397dd5">
+                        Clôturées 
+                        <span
+                            class="badge"
+                            style="background-color:#397dd5; color:white;">
+                            {{ session.nbFichesCloturees }}
+                        </span> 
+                    </a>
+                </li>
+                <li id="tableau-de-bord">
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                       {'libEtat': "Validée et mise en paiement" }) }}"
+                       style="color:#008900">
+                        Validées 
+                        <span 
+                            class="badge"
+                            style="background-color:#008900; color:white;">
+                            {{ session.nbFichesValidees }}
+                        </span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirFicheEtat',
+                        {'libEtat': "Remboursée" }) }}"
+                        style="color:#8539d5">
+                        Remboursées 
+                        <span 
+                            class="badge"
+                            style="background-color:#8539d5; color:white;">
+                            {{ session.nbFichesRemboursees }}
+                        </span> 
+                    </a>
+                </li>
+            </ul>
+    {% endif %}
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                        role="button" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>
+                            {{ session.metier }} : {{ session.prenom }} 
+                            {{ session.nom }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="{{ path('gsb_gestion_frais_homepage') }}">
+                                <span class="glyphicon glyphicon-off"></span>
+                                Déconnexion
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+{% endblock %}
+
+{% block body %}
+    {# S'il y a une alerte, on l'affiche dans un joli cadre #}
+    {% include "GsbGestionFraisBundle:Default:alert.html.twig" %}
+    
+    {% block GestionFrais_body %}
+	{% endblock %}
+    
+{% endblock %}

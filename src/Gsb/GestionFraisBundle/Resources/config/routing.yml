@@ -1,0 +1,85 @@
+# src/Gsb/GestionFraisBundle/Resources/config/routing.yml
+
+gsb_gestion_frais_homepage:
+    path:     /
+    defaults: { _controller: GsbGestionFraisBundle:Default:index }
+
+gsb_gestion_frais_consulter:
+    path:     /consulter
+    defaults: { _controller: GsbGestionFraisBundle:EtatFrais:consulter }
+
+gsb_gestion_frais_gerer:
+    path:     /gerer
+    defaults: { _controller: GsbGestionFraisBundle:GererFrais:gerer }
+
+gsb_gestion_frais_gerer_supprimer:
+    path:     /gerer/supprimer/{idFrais}
+    defaults: { _controller: GsbGestionFraisBundle:GererFrais:supprimer }
+    
+gsb_gestion_frais_saisirForfait:
+    path:     /gerer/saisirForfait
+    defaults: { _controller: GsbGestionFraisBundle:GererFrais:saisirForfait }
+
+gsb_gestion_frais_saisirHorsForfait:
+    path:     /gerer/saisirHorsForfait
+    defaults: { _controller: GsbGestionFraisBundle:GererFrais:saisirHorsForfait }
+
+gsb_gestion_frais_administrer:
+    path:     /administrer
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:administrer }
+
+gsb_gestion_frais_administrer_etat:
+    path:     /administrer/etat
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:etat }
+    
+gsb_gestion_frais_administrer_modifier:
+    path:     /administrer/modifier
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:modifier }
+
+gsb_gestion_frais_administrer_saisirForfait:
+    path:     /administrer/saisirForfait
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:saisirForfait }
+
+gsb_gestion_frais_administrer_saisirHorsForfait:
+    path:     /administrer/saisirHorsForfait
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:saisirHorsForfait }
+
+gsb_gestion_frais_administrer_supprimer:
+    path:     /administrer/supprimer/{idFrais}
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:supprimer }
+
+gsb_gestion_frais_administrer_reporter:
+    path:     /administrer/reporter/{idFrais}
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:reporter }
+    
+gsb_gestion_frais_administrer_validerFiche:
+    path:     /administrer/validerFiche
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:validerFiche }
+
+gsb_gestion_frais_administrer_suivreFiche:
+    path:     /administrer/suiviFiche
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:suivreFiche }
+    
+gsb_gestion_frais_administrer_voirFicheEtat:
+    path:     /administrer/ficheCloturee/{libEtat}
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:voirFicheEtat }
+
+gsb_gestion_frais_administrer_voirEtat:
+    path:     /administrer/voirEtat/{idVisiteur}/{mois}
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:voirEtat }
+
+gsb_gestion_frais_administrer_rembourserFiche:
+    path:     /administrer/rembourserFiche
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:rembourserFiche }
+    
+gsb_gestion_frais_administrer_cloturerFiche:
+    path:     /administrer/cloturerFiche
+    defaults: { _controller: GsbGestionFraisBundle:AdministrerFrais:cloturerFiche }
+
+gsb_gestion_frais_fpdf_voirPdf:
+    path:     /fpdf/voirPdf/{idVisiteur}/{mois}
+    defaults: { _controller: GsbGestionFraisBundle:Fpdf:voirPdf }
+
+gsb_gestion_frais_fpdf_pdf:
+    path:     /fpdf/pdf
+    defaults: { _controller: GsbGestionFraisBundle:Fpdf:pdf }

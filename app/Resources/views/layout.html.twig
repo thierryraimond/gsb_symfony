@@ -1,0 +1,78 @@
+{# app/Resources/views/layout.html.twig #}
+{# fenêtre principale de l'application : le template "Père" #}
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+    <head>
+        <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" 
+            href="{{ asset('assets/Bootstrap/3.3.6-dist/css/bootstrap.css') }}"
+            type="text/css" />
+        <link href="{{ asset('assets/css/myStyles.css') }}" 
+            rel="stylesheet" 
+            type="text/css"/>
+	<!-- JQuery UI Datepicker -->
+        <link 
+   href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" 
+            rel="stylesheet" 
+            type="text/css"/>
+        <link rel="shortcut icon" type="image/x-icon" 
+            href="{{ asset('assets/images/favicon.ico') }}" />
+    </head>
+    <body>
+        
+    {% block navbar_menu %}
+	<nav class="navbar navbar-default navbar-fixed-top" id="navbarMain"
+	    style="background-color: transparent;">
+	    <div>
+		<div class="navbar-header col-xs-3 col-sm-2 col-md-1 col-lg-1" >
+		    <a class="navbar-brand" 
+			rel="home" 
+			href="#" 
+			title="Logo Galaxy-Swiss Bourdin">
+		    </a>
+		</div>
+	        <div id="navbar-title" 
+		    class="navbar-center col-xs-9 col-sm-10 col-md-11 col-lg-11">
+		    <ul class="nav navbar-nav">
+		        <li>
+			    <a href="#"
+			        style="color:white; text-align: center; font-size:18px;">
+			        Suivi du remboursement des frais
+			    </a>
+			</li>
+		    </ul>
+		</div>
+	    </div>
+	</nav>
+    {% endblock %}
+    
+    <div class="container" id="page">
+	{% block body %}
+	{% endblock %}
+    </div>
+    
+    {% block javascripts %}
+    <script src="{{ asset('assets/JQuery/jquery-1.11.3.min.js') }}">
+    </script>
+    <script type="text/javascript" 
+        src="{{ asset('assets/Bootstrap/3.3.6-dist/js/bootstrap.min.js') }}">
+    </script>
+
+    <!-- JQuery UI Datepicker -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js">
+	</script>
+	{# script javascript pour Datepicker et les messages d'alerte #}
+    <script type="text/javascript" src="{{ asset('assets/js/gsb.js') }}">
+	</script> 
+    
+    {% endblock %}
+    </body>
+</html>

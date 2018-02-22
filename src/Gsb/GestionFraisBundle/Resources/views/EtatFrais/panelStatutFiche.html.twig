@@ -1,0 +1,21 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/panelStatutFiche.html.twig #}
+
+<div class="panel panel-warning">
+    <div class="panel-body">
+        <div class="col-lg-12">
+            Etat : 
+            {% if libEtat == "Fiche créée, saisie en cours" %}
+                <font color="#d67f2e">{{ libEtat }}</font>
+            {% elseif libEtat == "Saisie clôturée" %} 
+                <font color="#397dd5">{{ libEtat }}</font>
+            {% elseif libEtat == "Validée et mise en paiement" %} 
+                <font color="#008900">{{ libEtat }}</font>
+            {% elseif libEtat == "Remboursée" %} 
+                <font color="#8539d5">{{ libEtat }}</font>
+            {% endif %}
+            depuis le {{ dateModif }}
+            <br>
+            Montant validé : {{ montantValide }} €
+        </div>
+    </div>
+</div>

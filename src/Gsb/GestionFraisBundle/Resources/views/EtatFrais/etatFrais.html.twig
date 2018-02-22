@@ -1,0 +1,49 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/etatFrais.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mes fiches de frais</h3>
+    </div>
+    <div class="panel-body">
+        {# Affiche le formulaire SelectionnerMois #}
+        {% include "GsbGestionFraisBundle:EtatFrais:formSelectionnerMois.html.twig" %}
+    </div>
+</div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            Fiche de frais du mois {{ numMois }}-{{ numAnnee }}
+            pour le {{ session.metier }} {{ session.prenom }} {{ session.nom }} :
+            <a class="btn btn-success btn-large" href="
+                {#{{ path('gsb_gestion_frais_fpdf_voirPdf',
+                {'idVisiteur': session.idVisiteur, 
+                 'mois': moisASelectionner}) }}"#}
+                {{ path('gsb_gestion_frais_fpdf_pdf') }}"
+                style="text-align:right; color: white;"
+                title="Imprimer la fiche au format PDF">
+                Telecharger PDF
+            </a>
+        </h2>
+    </div>
+    <div class="panel-body">
+    <div class="col-lg-12">
+            
+        {# include panelStatutFiche #}
+        {% include "GsbGestionFraisBundle:EtatFrais:panelStatutFiche.html.twig" %}
+        
+        {# include tableForfait #}
+        {% include "GsbGestionFraisBundle:EtatFrais:tableForfait.html.twig" %}
+        
+        {# include tableHorsForfait #}
+        {% include "GsbGestionFraisBundle:EtatFrais:tableHorsForfait.html.twig" %}
+                
+    </div>
+    </div>
+</div>
+
+{% endblock %}    

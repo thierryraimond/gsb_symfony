@@ -1,0 +1,27 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/formSelectionnerMois.html.twig #}
+
+<form action="{{ path('gsb_gestion_frais_administrer_etat') }}" method="post">
+    <div class="corpsForm">
+        <p>
+            <label for="lstMois" accesskey="n">
+                Mois : 
+            </label>
+<!-- valide automatiquement le changement de selection via javascript -->
+            <select id="lstMois" name="lstMois" onchange='this.form.submit()'>
+
+            {# Selection du dernier mois dans la zone de liste #}
+            {% for unMois in lesMois %}
+                {% if unMois.mois == moisASelectionner %}    
+                    <option selected value="{{ unMois.mois }}">
+                        {{ unMois.numMois }}/{{ unMois.numAnnee }}
+                    </option>
+                {% else %}
+                    <option value="{{ unMois.mois }}">
+                        {{ unMois.numMois }}/{{ unMois.numAnnee }}
+                    </option>
+                {% endif %}
+            {% endfor %}
+            </select>
+        </p>
+    </div>
+</form>

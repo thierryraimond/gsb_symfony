@@ -1,0 +1,55 @@
+{# src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/modifierFrais.html.twig #}
+
+{% extends "GsbGestionFraisBundle::sommaire.html.twig" %}
+
+{% block GestionFrais_body %}
+    
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Selection d'un employé et d'un mois</h3>
+    </div>
+    <div class="panel-body">
+        {# Affiche le formulaire formSelectionnerVisiteur #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formSelectionnerVisiteur.html.twig" %}
+        
+        {# Affiche le formulaire SelectionnerMois #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formSelectionnerMois.html.twig" %}
+        
+    </div>
+</div>
+        
+{% include "GsbGestionFraisBundle:AdministrerFrais:workFlow.html.twig" %}
+
+{% set totalFiche = totalFraisForfait + totalFraisHorsForfait %}    
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h2 class="panel-title">
+            Modification de la fiche de frais du mois {{ numMois }}-{{ numAnnee }}
+            pour l'employé {{ employe.prenom }} {{ employe.nom }} :
+            <a class="btn btn-success btn-large" href="
+                {{ path('gsb_gestion_frais_administrer_validerFiche') }}"
+                style="text-align:right; color: white;"
+                title="Valider globalement la fiche et la passer à l'état 'Validée'"
+                onclick="return confirm
+                        ('Voulez-vous vraiment valider cette fiche de frais pour\n\
+un montant de frais forfaitisé égal à {{ totalFraisForfait }} € et un total de \n\
+frais hors forfait égal à {{ totalFraisHorsForfait }} € soit un global de \n\
+{{ totalFiche }} € ?');">
+                Valider la fiche
+            </a>
+        </h2>
+    </div>
+    <div class="panel-body">
+    <div class="col-lg-12">
+            
+        {# include formFraisForfait #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formFraisForfait.html.twig" %}
+              
+        {# include formFraisHorsForfait #}
+        {% include "GsbGestionFraisBundle:AdministrerFrais:formFraisHorsForfait.html.twig" %}
+                       
+    </div>
+    </div>
+</div>
+
+{% endblock %}    

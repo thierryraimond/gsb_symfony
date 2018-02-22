@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/selectionnerVisiteur.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/Includes/class.pdf.inc.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/tableForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/panelStatutFiche.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/Includes/class.fctgsb.inc.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/web/assets/js/gsb.js</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/FpdfController.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formFraisForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/Includes/fpdf.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/AdministrerFraisController.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formFraisHorsForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/GererFraisController.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/app/Resources/views/layout.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/Suivis.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/administrerFrais.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/workFlow.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formSelectionnerVisiteur.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/selectionnerMoisVisiteur.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/modifierFiche.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/DefaultController.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/web/assets/css/myStyles.css</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/formSelectionnerMois.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/GererFrais/formFraisHorsForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/EtatFraisController.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/GererFrais/tableFraisHorsForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/GererFrais/formFraisForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/Default/alert.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/tableHorsForfait.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/etatFrais.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/GererFrais/gererFrais.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/sommaire.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/config/routing.yml</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/tableauDeBord.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/formSelectionnerMois.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/selectionSuivis.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/AdministrerFrais/tableSuivisFiche.html.twig</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Controller/Includes/class.pdogsb.inc.php</file>
+            <file>file:/T:/wamp/www/gsb_symfony/src/Gsb/GestionFraisBundle/Resources/views/EtatFrais/selectionnerMois.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

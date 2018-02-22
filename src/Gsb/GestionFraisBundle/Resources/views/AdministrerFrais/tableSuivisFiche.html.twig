@@ -1,0 +1,39 @@
+{# empty Twig template #}
+
+<div class="panel panel-danger table-responsive">
+    <table class="table table-striped table-condensed">
+        <div class="panel-heading">
+            Les fiches de frais à l'état : "{{ etat }}" 
+        </div>
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Mois</th>
+                <th style="text-align:right" class="montant">Montant Validé</th>
+                <th style="text-align:center">Date de modification</th>
+                <th>Etat</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for uneFicheFrais in lesFichesFrais %}
+            <tr>
+                <td>{{ uneFicheFrais.prenom }}</td>
+                <td>{{ uneFicheFrais.nom }}</td>
+                <td>{{ uneFicheFrais.mois }}</td>
+                <td style="text-align:right">{{ uneFicheFrais.montantValide }} €</td>
+                <td style="text-align:center">{{ uneFicheFrais.dateModif }}</td>
+                <td>{{ uneFicheFrais.libEtat }}</td>
+                <td>
+                    <a href="{{ path('gsb_gestion_frais_administrer_voirEtat', 
+                        {'idVisiteur': uneFicheFrais.idVisiteur, 
+                         'mois': uneFicheFrais.mois}) }}">
+                        Selectionner cette fiche
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
